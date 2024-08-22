@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fluid-div {
+  background-color: #3498db;
+  transition: all 1s ease-in-out;
+  position: fixed;
+}

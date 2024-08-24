@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useState } from "react"
-import { ThreeDBackground } from "./Components/3DBackground"
+import { ThreeDBackground } from "./Components/components/3DBackground"
 import { Canvas } from "@react-three/fiber"
-import { MouseFollower } from "./Components/MouseFollower"
+import { Cursor } from "./Components/components/Cursor"
 
 interface AppProps {}
 
@@ -16,11 +16,11 @@ export const App : React.FC<AppProps> = ({}) => {
   }, []);
   return (
     <>
-      <MouseFollower clientX={clientX} clientY={clientY}/>
+      <Cursor clientX={clientX} clientY={clientY}/>
       <div className="fixed h-lvh w-lvw">
         <Canvas className="h-full w-full">
           <Suspense fallback={null}>
-            <ThreeDBackground/>
+            <ThreeDBackground clientX={clientX}/>
           </Suspense>
         </Canvas>
       </div>

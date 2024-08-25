@@ -2,6 +2,9 @@ import { Suspense, useEffect, useState } from "react"
 import { ThreeDBackground } from "./Components/components/3DBackground"
 import { Canvas } from "@react-three/fiber"
 import { Cursor } from "./Components/components/Cursor"
+import { Navbar } from "./Components/components/Navbar"
+import { Outlet } from "react-router-dom"
+import { SlimeBallProvider } from "./Context/slimeBall"
 
 interface AppProps {}
 
@@ -14,21 +17,23 @@ export const App : React.FC<AppProps> = ({}) => {
       setClientY(e.clientY);
     });
   }, []);
+  const [slimeBallColor, setSlimeBallColor] = useState<string>("white");
+  const [scale, setScale] = useState<number>(1);
   return (
-    <>
-      <Cursor clientX={clientX} clientY={clientY}/>
-      <div className="fixed h-lvh w-lvw">
-        <Canvas className="h-full w-full">
-          <Suspense fallback={null}>
-            <ThreeDBackground clientX={clientX}/>
-          </Suspense>
-        </Canvas>
-      </div>
-      <div className="h-lvh w-lvw text-white">
-        <p className="">Sushant</p>
-        <p className="">Wayal</p>
-      </div>
-    </>
+    <div>
+      <SlimeBallProvider value={{slimeBallColor, setSlimeBallColor, scale, setScale}}>
+        <Cursor clientX={clientX} clientY={clientY}/>
+        <div className="fixed h-lvh w-lvw z-[-1] bg-black">
+          <Canvas className="h-full w-full">
+            <Suspense fallback={null}>
+              <ThreeDBackground clientX={clientX}/>
+            </Suspense>
+          </Canvas>
+        </div>
+        <Navbar/>
+        <Outlet/>
+      </SlimeBallProvider>
+    </div>
   )
 }
 

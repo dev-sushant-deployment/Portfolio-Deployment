@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react"
 import { useSlimeBall } from "../../Context/slimeBall"
 import { mouseInOut } from "../../Helper"
+import { Link } from "react-router-dom"
 
 interface NavbarProps {}
 
 export const Navbar : React.FC<NavbarProps> = ({}) => {
-  const fullStackRef = useRef<HTMLParagraphElement>(null)
-  const projectsRef = useRef<HTMLParagraphElement>(null)
-  const contactRef = useRef<HTMLParagraphElement>(null)
+  const fullStackRef = useRef<HTMLAnchorElement>(null)
+  const projectsRef = useRef<HTMLAnchorElement>(null)
+  const contactRef = useRef<HTMLAnchorElement>(null)
   const { setScale }  = useSlimeBall()
   let elements = [
     {ref: fullStackRef},
@@ -26,9 +27,9 @@ export const Navbar : React.FC<NavbarProps> = ({}) => {
   },[insideEle])
   return (
     <div className="text-white flex py-4 justify-between px-8 font-semibold text-2xl fixed top-0 left-0 w-lvw z-10 uppercase">
-      <p ref={fullStackRef}>Full-Stack Developer</p>
-      <p ref={projectsRef}>Projects</p>
-      <p ref={contactRef}>Contact</p>
+      <Link to="/" ref={fullStackRef}>Full-Stack Developer</Link>
+      <Link to="/projects" ref={projectsRef}>Projects</Link>
+      <Link to="/contact" ref={contactRef}>Contact</Link>
     </div>
   )
 }

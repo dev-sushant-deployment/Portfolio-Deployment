@@ -23,7 +23,7 @@ export const App : React.FC<AppProps> = ({}) => {
     <div>
       <SlimeBallProvider value={{slimeBallColor, setSlimeBallColor, scale, setScale}}>
         <Cursor clientX={clientX} clientY={clientY}/>
-        <div className="fixed h-lvh w-lvw z-[-1] bg-black">
+        <div className="fixed h-lvh w-lvw z-[-1] bg-[#111111]">
           <Canvas className="h-full w-full">
             <Suspense fallback={null}>
               <ThreeDBackground clientX={clientX}/>

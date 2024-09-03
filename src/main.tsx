@@ -9,6 +9,8 @@ const router = createBrowserRouter(
   createRoutesFromChildren(
     <Route path="/" element={<App />}>
       <Route path="" element={<Home />}/>
+      <Route path="projects" element={<div>Projects</div>}/>
+      <Route path="contact" element={<div>Contact</div>}/>
     </Route>
   )
 )

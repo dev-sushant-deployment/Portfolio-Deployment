@@ -26,7 +26,7 @@ export const Navbar : React.FC<NavbarProps> = ({}) => {
     else setScale(1);
   },[insideEle])
   return (
-    <div className="text-white flex py-4 justify-between px-8 font-semibold text-2xl fixed top-0 left-0 w-lvw z-10 uppercase">
+    <div className="text-white flex py-4 justify-between px-8 font-semibold text-2xl fixed top-0 left-0 w-lvw z-10 uppercase bg-[#111111] shadow-2xl shadow-[#111111]">
       <Link to="/" ref={fullStackRef}>Full-Stack Developer</Link>
       <Link to="/projects" ref={projectsRef}>Projects</Link>
       <Link to="/contact" ref={contactRef}>Contact</Link>

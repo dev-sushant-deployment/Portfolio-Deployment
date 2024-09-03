@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { useSlimeBall } from "../../Context/slimeBall"
 import { mouseInOut } from "../../Helper"
+import { Footer } from "../components/Footer"
+import { MagneticCircle } from "../components/MagneticCircle"
 
 interface HomeProps {}
 
@@ -53,17 +55,18 @@ export const Home : React.FC<HomeProps> = ({}) => {
     }
   },[anyInside])
   return (
-    <div className="w-lvw flex flex-col items-center text-white relative top-28 gap-8">
+    <div className="w-lvw flex flex-col items-center text-white relative top-28 gap-20">
       <div className="w-[70%] flex">
         <div className="w-[80%] flex flex-col gap-8">
           <div className="flex flex-col w-full leading-none  text-[165px] font-bold">
             <p ref={messageRef}>{message}</p>
             <p className={mySkill.length > 6 ? "text-right" : "pl-[30%]"} ref={mySkillRef}>{mySkill}</p>
           </div>
-          <div className="w-full">
+          <div className="w-full flex items-end gap-[10%]">
             <p className="w-[70%] text-2xl font-medium">
               Hi there! I’m a dedicated full-stack developer with a passion for creating innovative web solutions. From interactive games to data-driven platforms, I love turning ideas into reality through code. Always eager to learn and tackle new challenges, I’m committed to crafting impactful digital experiences.
             </p>
+            <MagneticCircle size="100px" range={70} strength={2} color="#333333" PrimaryText="Explore" secondaryText="Projects" className="-translate-x-1/2 -translate-y-1/2 mt-[10%]"/>
           </div>
         </div>
         <div className="w-[20%] flex flex-col gap-10">
@@ -83,6 +86,37 @@ export const Home : React.FC<HomeProps> = ({}) => {
           </div>
         </div>
       </div>
+      <div className="flex flex-col w-[70%]">
+        <p className="text-left w-full font-normal text-7xl">Acheivement</p>
+        <div className="pl-[10%] mt-[10%] flex flex-col gap-10">
+          <p className="text-3xl">
+            First Rank in IIT Mandi Hackathon (FrostHack 2024)
+          </p>
+          <div className="ml-[10%]">
+            <p className="text-2xl mb-2">Note-Corner</p>
+            <img src="../../../ProjectCover/notecorner.png" alt="Note-Corner" className="w-[80%] object-cover"/>
+            <div className="flex justify-end mr-[10%]">
+              <MagneticCircle size="100px" range={70} strength={2} color="#333333" PrimaryText="Explore" secondaryText="More" className="-translate-x-1/2 -translate-y-1/2"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col w-[70%]">
+        <p className="text-left w-full font-normal text-7xl">Experience</p>
+        <div className="pl-[10%] mt-[10%] flex flex-col gap-10">
+          <p className="text-3xl">
+            Volunteered in Miraz Fest Website 2024
+          </p>
+          <div className="ml-[10%]">
+            <p className="text-2xl mb-2">Miraz Web</p>
+            <img src="../../../ProjectCover/mirazweb.png" alt="Miraz-Web" className="w-[80%] object-cover"/>
+            <div className="flex justify-end mr-[10%]">
+              <MagneticCircle size="100px" range={70} strength={2} color="#000055" PrimaryText="Explore" secondaryText="More" className="-translate-x-1/2 -translate-y-1/2"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer/>
     </div>
   )
 }

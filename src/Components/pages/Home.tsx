@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { useSlimeBall } from "../../Context/slimeBall"
 import { mouseInOut } from "../../Helper"
-import { Footer } from "../components/Footer"
-import { MagneticCircle } from "../components/MagneticCircle"
+import { Magnetic } from "../components/Magnetic"
 
 interface HomeProps {}
 
@@ -66,7 +65,10 @@ export const Home : React.FC<HomeProps> = ({}) => {
             <p className="w-[70%] text-2xl font-medium">
               Hi there! I’m a dedicated full-stack developer with a passion for creating innovative web solutions. From interactive games to data-driven platforms, I love turning ideas into reality through code. Always eager to learn and tackle new challenges, I’m committed to crafting impactful digital experiences.
             </p>
-            <MagneticCircle size="100px" range={70} strength={2} color="#333333" PrimaryText="Explore" secondaryText="Projects" className="-translate-x-1/2 -translate-y-1/2 mt-[10%]"/>
+            <Magnetic height="100px" range={70} strength={2} color="#333333" className="-translate-x-1/2 -translate-y-1/2 mt-[10%] rounded-full flex flex-col justify-center items-center">
+              <p>Explore</p>
+              <p>Projects</p>
+            </Magnetic>
           </div>
         </div>
         <div className="w-[20%] flex flex-col gap-10">
@@ -96,7 +98,10 @@ export const Home : React.FC<HomeProps> = ({}) => {
             <p className="text-2xl mb-2">Note-Corner</p>
             <img src="../../../ProjectCover/notecorner.png" alt="Note-Corner" className="w-[80%] object-cover"/>
             <div className="flex justify-end mr-[10%]">
-              <MagneticCircle size="100px" range={70} strength={2} color="#333333" PrimaryText="Explore" secondaryText="More" className="-translate-x-1/2 -translate-y-1/2"/>
+              <Magnetic height="100px" range={70} strength={2} color="#333333" className="-translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col justify-center items-center">
+                <p>Explore</p>
+                <p>More</p>
+              </Magnetic>
             </div>
           </div>
         </div>
@@ -111,12 +116,14 @@ export const Home : React.FC<HomeProps> = ({}) => {
             <p className="text-2xl mb-2">Miraz Web</p>
             <img src="../../../ProjectCover/mirazweb.png" alt="Miraz-Web" className="w-[80%] object-cover"/>
             <div className="flex justify-end mr-[10%]">
-              <MagneticCircle size="100px" range={70} strength={2} color="#000055" PrimaryText="Explore" secondaryText="More" className="-translate-x-1/2 -translate-y-1/2"/>
+              <Magnetic height="100px" range={70} strength={2} color="#000055" className="-translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col justify-center items-center">
+                <p>Explore</p>
+                <p>More</p>
+              </Magnetic>
             </div>
           </div>
         </div>
       </div>
-      <Footer/>
     </div>
   )
 }

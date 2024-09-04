@@ -4,12 +4,13 @@ import App from './App.tsx'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromChildren } from 'react-router-dom'
 import { Home } from './Components/pages/Home.tsx'
+import { Projects } from './Components/pages/Projects.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromChildren(
     <Route path="/" element={<App />}>
       <Route path="" element={<Home />}/>
-      <Route path="projects" element={<div>Projects</div>}/>
+      <Route path="projects" element={<Projects/>}/>
       <Route path="contact" element={<div>Contact</div>}/>
     </Route>
   )

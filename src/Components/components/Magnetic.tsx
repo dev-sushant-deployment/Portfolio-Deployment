@@ -1,17 +1,18 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-interface MagneticCircleProps {
-  size: string;
+interface MagneticProps {
+  children?: React.ReactNode;
+  height: string;
+  width?: string;
   range: number;
   strength: number;
   color: string;
-  PrimaryText: string;
-  secondaryText?: string;
   className?: string;
+  scale?: number;
 }
 
-export const MagneticCircle: React.FC<MagneticCircleProps> = ({size, range, strength, color, PrimaryText, secondaryText, className}) => {
+export const Magnetic: React.FC<MagneticProps> = ({children, height, width, range, strength, color, className, scale}) => {
   const circleRef = useRef<HTMLDivElement>(null);
   const handleMouseMove = ({clientX, clientY} : {
     clientX: number;
@@ -28,7 +29,7 @@ export const MagneticCircle: React.FC<MagneticCircleProps> = ({size, range, stre
     if (distance < range) {
       gsap.to(circleRef.current, {
         duration: 0.5,
-        scale: 1.2,
+        scale: scale || 1.2,
         top: dy*strength,
         left: dx*strength
       });
@@ -47,9 +48,8 @@ export const MagneticCircle: React.FC<MagneticCircleProps> = ({size, range, stre
     return () => document.removeEventListener("mousemove", handleMouseMove);
   },[circleRef]);
   return (
-    <div style={{height: size, width: size, backgroundColor: color}} className={`rounded-full flex justify-center items-center flex-col relative z-[10000] text-white ${className}`} ref={circleRef}>
-      <p>{PrimaryText}</p>
-      {secondaryText && <p>{secondaryText}</p>}
+    <div style={{height, width: width || height, backgroundColor: color}} className={`relative z-[10000] ${className}`} ref={circleRef}>
+      {children}
     </div>
   );
 };

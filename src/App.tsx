@@ -5,6 +5,7 @@ import { Cursor } from "./Components/components/Cursor"
 import { Navbar } from "./Components/components/Navbar"
 import { Outlet } from "react-router-dom"
 import { SlimeBallProvider } from "./Context/slimeBall"
+import { Footer } from "./Components/components/Footer"
 
 interface AppProps {}
 
@@ -32,6 +33,7 @@ export const App : React.FC<AppProps> = ({}) => {
         </div>
         <Navbar/>
         <Outlet/>
+        <Footer/>
       </SlimeBallProvider>
     </div>
   )

@@ -10,9 +10,10 @@ interface MagneticProps {
   color: string;
   className?: string;
   scale?: number;
+  disabled?: boolean;
 }
 
-export const Magnetic: React.FC<MagneticProps> = ({children, height, width, range, strength, color, className, scale}) => {
+export const Magnetic: React.FC<MagneticProps> = ({children, height, width, range, strength, color, className, scale, disabled}) => {
   const circleRef = useRef<HTMLDivElement>(null);
   const handleMouseMove = ({clientX, clientY} : {
     clientX: number;
@@ -44,9 +45,10 @@ export const Magnetic: React.FC<MagneticProps> = ({children, height, width, rang
     }
   }
   useEffect(() => {
+    if (disabled) return;
     document.addEventListener("mousemove", handleMouseMove);
     return () => document.removeEventListener("mousemove", handleMouseMove);
-  },[circleRef]);
+  },[circleRef, disabled]);
   return (
     <div style={{height, width: width || height, backgroundColor: color}} className={`relative z-[10000] ${className}`} ref={circleRef}>
       {children}

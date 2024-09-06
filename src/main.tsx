@@ -5,6 +5,7 @@ import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromChildren } from 'react-router-dom'
 import { Home } from './Components/pages/Home.tsx'
 import { Projects } from './Components/pages/Projects.tsx'
+import { Project } from './Components/pages/Project.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromChildren(
@@ -12,6 +13,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />}/>
       <Route path="projects" element={<Projects/>}/>
       <Route path="contact" element={<div>Contact</div>}/>
+      <Route path="project/:name" element={<Project/>}/>
     </Route>
   )
 )

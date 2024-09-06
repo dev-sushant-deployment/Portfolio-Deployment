@@ -27,15 +27,17 @@ export const Cursor: React.FC<CursorProps> = ({ clientX, clientY }) => {
       <Canvas onClick={(e) => {
         e.preventDefault();
         const elements = document.elementsFromPoint(clientX, clientY);
-        console.log("elements",elements);
         elements.forEach((element) => {
           if (element.tagName === "A") {
             const href = element.getAttribute("href");
-            if (href) navigate(href);
+            if (href) {
+              if (href.startsWith("/")) navigate(href);
+              else window.open(href, "_blank");
+            }
           }
         });
       }}>
-        <SlimeBall radius={0.5} distortion={0.5} distortionSpeed={2} color={"white"} clientX={clientX} displace={false} animateScale scaleFactor={12}/>
+        <SlimeBall radius={0.5} distortion={0.9} distortionSpeed={2} color={"white"} clientX={clientX} displace={false} animateScale scaleFactor={12}/>
         <ambientLight intensity={100} color={"white"}/>
       </Canvas>
     </div>

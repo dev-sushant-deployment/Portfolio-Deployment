@@ -111,26 +111,6 @@ export const Home : React.FC<HomeProps> = ({}) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-[70%]">
-        <p className="text-left w-full font-normal text-7xl">Experience</p>
-        <div className="pl-[10%] mt-[10%] flex flex-col gap-10">
-          <p className="text-3xl">
-            Volunteered in Miraz Fest Website 2024
-          </p>
-          <div className="ml-[10%]">
-            <p className="text-2xl mb-2">Miraz Web</p>
-            <img src="../../../ProjectCover/mirazweb.png" alt="Miraz-Web" className="w-[80%] object-cover"/>
-            <div className="flex justify-end mr-[10%]">
-              <Link to="/project/enviscribe">
-                <Magnetic height="100px" range={70} strength={2} color="#000055" className="-translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col justify-center items-center">
-                  <p>Explore</p>
-                  <p>More</p>
-                </Magnetic>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

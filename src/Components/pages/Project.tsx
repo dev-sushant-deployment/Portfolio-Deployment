@@ -5,7 +5,7 @@ import { Tag } from "../components/Tag";
 import { mouseInOut } from "../../Helper";
 import { useSlimeBall } from "../../Context/slimeBall";
 import { MyProjects } from "../../Data/projects.json"
-import axios from "axios";
+import { MediaNavigator } from "../components/MediaNavigator";
 
 interface ProjectProps {}
 
@@ -14,28 +14,22 @@ export const Project : React.FC<ProjectProps> = ({}) => {
   const project = MyProjects.find(project => project.link === name);
   const projectIndex = MyProjects.findIndex(project => project.link === name);
   if (!project) return null;
-  const { name : projectName, description, github, website, filename, year, technologies } = project;
+  const { name : projectName, description, github, website, filename, year, technologies, link, noOfSS } = project;
   const { setScale }  = useSlimeBall()
-  const [feedbacks, setFeedbacks] = useState<string[]>([
-    "This is a good project",
-    "I like this project",
-    "This project is very helpful",
-    "I am very happy to see this project"
-  ]);
   useEffect(() => {
     window.scrollTo(0,0);
-    // const { data } = axios.get("https://api.github.com/repos/Abdul-Sen/Portfolio/issues");
-    // setFeedbacks(data);
   }, [name]);
   const githubLinkRef = useRef<HTMLAnchorElement>(null);
   const websiteLinkRef = useRef<HTMLAnchorElement>(null);
   const backLinkRef = useRef<HTMLAnchorElement>(null);
   const nextLinkRef = useRef<HTMLAnchorElement>(null);
+  const lastWebsiteLinkRef = useRef<HTMLAnchorElement>(null);
   let elements = [
     {ref: githubLinkRef},
     {ref: websiteLinkRef},
     {ref: backLinkRef},
-    {ref: nextLinkRef}
+    {ref: nextLinkRef},
+    {ref: lastWebsiteLinkRef}
   ]
   const [insideEle, setInsideEle] = useState<number>(-1);
   useEffect(() => {
@@ -88,16 +82,20 @@ export const Project : React.FC<ProjectProps> = ({}) => {
           </div>
         </div>
       </div>
-      <video src={`../../../ProjectCover/${filename}`} className="w-[72vw] h-[84vh] object-cover border-2 border-white rounded-2xl" autoPlay loop muted />
-      <div className="w-[72vw] flex flex-col gap-10 justify-between text-white">
-        <p className="uppercase font-semibold">Feedbacks</p>
-        <div className="flex gap-2 flex-wrap">
-          {feedbacks.map((feedback, i) => (
-            <Tag key={i} name={feedback} />
-          ))}
-        </div>
-        <input type="text" placeholder="Add Your Feedback" className="w-full py-2 px-2 border-[1px] border-white rounded-full bg-[#111111] text-white z-[10000]" />
+      <div className="flex flex-col gap-4">
+        <p className="uppercase text-white text-center font-semibold text-lg"> Demo Video </p>
+        <video src={`../../../ProjectCover/${filename}`} className="w-[72vw] h-[84vh] object-cover border-2 border-white rounded-2xl" autoPlay loop muted />
       </div>
+      <div className="flex flex-col gap-0">
+        <p className="uppercase text-white text-center font-semibold text-lg"> Screen-shots </p>
+        <MediaNavigator projectName={link} numberOfMedia={noOfSS} />
+      </div>
+      <Link to={website} className="py-2 px-2 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111] text-white" ref={lastWebsiteLinkRef}>
+        <p>Visit Website</p>
+        <Globe size={18} />
+        <ArrowRight size={24} />
+      </Link>
+      <hr className="w-[72vw] border-[0.5px] border-white" />
       <div className="w-[72vw] flex justify-between text-white">
         <Link to={projectIndex === 0 ? "/projects" : `/project/${MyProjects[projectIndex-1].link}`} className="py-2 px-2 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111]" ref={backLinkRef}>
           <ArrowLeft size={24} />

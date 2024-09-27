@@ -19,7 +19,6 @@ export const Projects: React.FC<ProjectsProps> = () => {
     {name: "Idea-Connect", filename: "ideaconnect.jpg", link: "ideaconnect", ref: useRef<HTMLDivElement>(null)},
     {name: "EnviScribe", filename: "enviscribe.jpg", link: "enviscribe", ref: useRef<HTMLDivElement>(null)},
     {name: "Note-Corner", filename: "notecorner.jpg", link: "notecorner", ref: useRef<HTMLDivElement>(null)},
-    {name: "Miraz-Web", filename: "mirazweb.jpg", link: "mirazweb", ref: useRef<HTMLDivElement>(null)},
     {name: "Multiplayer Tic-Tac-Toe", filename: "tictactoe.jpg", link: "tictactoe", ref: useRef<HTMLDivElement>(null)},
   ];
   const handleScroll = () => {
@@ -67,6 +66,7 @@ export const Projects: React.FC<ProjectsProps> = () => {
                 opacity: 1,
                 scale: 1.1,
               })
+              setProjectName(name);
               gsap.fromTo(projectNameRef.current, {y: 50}, {y: 0, duration: 1});
               setProjectIndex(ind);
             }

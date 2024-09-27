@@ -8,7 +8,8 @@
       "github": "https://github.com/sushant-wayal/IdeaConnect",
       "website": "",
       "year": "2024",
-      "technologies": ["React", "Node.js", "Express", "MongoDB", "Socket.io", "WebRTC", "Tailwind CSS"]
+      "technologies": ["React", "Node.js", "Express", "MongoDB", "Socket.io", "WebRTC", "Tailwind CSS"],
+      "noOfSS": 5
     },
     {
       "name": "EnviScribe",
@@ -16,9 +17,10 @@
       "link": "enviscribe",
       "description": "Created a Website for collecting and disseminating environmental data from remote locations. Designed and integrated dynamic graphs for intuitive data visualisation, enhancing user experience by 20%. Ensured efficient data management for reliable storage and retrieval, reducing errors in data by 25%.",
       "github": "https://github.com/sushant-wayal/EnviScribe",
-      "website": "",
+      "website": "https://envi-scribe.vercel.app/",
       "year": "2024",
-      "technologies": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"]
+      "technologies": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      "noOfSS": 6
     },
     {
       "name": "Note-Corner",
@@ -28,17 +30,8 @@
       "github": "https://github.com/sushant-wayal/Note-Corner",
       "website": "",
       "year": "2024",
-      "technologies": ["Next", "Node.js", "Express", "PostgreSQL", "Socket.io", "Tailwind CSS"]
-    },
-    {
-      "name": "Miraz-Web",
-      "filename": "mirazweb.jpg",
-      "link": "mirazweb",
-      "description": "Contributed in making Miraz-Fest Website, and utilised technologies like NextJs, Zod, Prisma, and PostgreSQL ,improving content management.",
-      "github": "https://github.com/sushant-wayal/miraz-web",
-      "website": "",
-      "year": "2024",
-      "technologies": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"]
+      "technologies": ["Next", "Node.js", "Express", "PostgreSQL", "Socket.io", "Tailwind CSS"],
+      "noOfSS": 5
     },
     {
       "name": "Multiplayer Tic-Tac-Toe",
@@ -48,7 +41,8 @@
       "github": "https://github.com/sushant-wayal/Multiplayer-TicTacToe-RealTime",
       "website": "",
       "year": "2024",
-      "technologies": ["HTML", "CSS", "Javascript", "Socket.io"]
+      "technologies": ["HTML", "CSS", "Javascript", "Socket.io"],
+      "noOfSS": 2
     }
   ]
 }

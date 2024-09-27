@@ -6,13 +6,14 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromChildren } 
 import { Home } from './Components/pages/Home.tsx'
 import { Projects } from './Components/pages/Projects.tsx'
 import { Project } from './Components/pages/Project.tsx'
+import { Contact } from './Components/pages/Contact.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromChildren(
     <Route path="/" element={<App />}>
       <Route path="" element={<Home />}/>
       <Route path="projects" element={<Projects/>}/>
-      <Route path="contact" element={<div>Contact</div>}/>
+      <Route path="contact" element={<Contact/>}/>
       <Route path="project/:name" element={<Project/>}/>
     </Route>
   )

@@ -55,18 +55,18 @@ export const Home : React.FC<HomeProps> = ({}) => {
     }
   },[anyInside])
   return (
-    <div className="w-lvw flex flex-col items-center text-white relative top-28 gap-20">
-      <div className="w-[70%] flex">
-        <div className="w-[80%] flex flex-col gap-8">
-          <div className="flex flex-col w-full leading-none  text-[165px] font-bold">
+    <div className="w-lvw flex flex-col items-center text-white relative top-36 sm:top-28 gap-20">
+      <div className="w-[95%] md:w-[80%] xl:w-[70%] flex flex-col gap-20 lg:flex-row">
+        <div className="w-full lg:w-[80%] flex flex-col gap-10 md:gap-8">
+          <div className="flex flex-col w-full leading-none text-[100px] sm:text-[120px] md:text-[160px] lg:text-[165px] font-bold">
             <p ref={messageRef}>{message}</p>
             <p className={mySkill.length > 6 ? "text-right" : "pl-[30%]"} ref={mySkillRef}>{mySkill}</p>
           </div>
           <div className="w-full flex items-end gap-[10%]">
-            <p className="w-[70%] text-2xl font-medium">
+            <p className="w-full lg:w-[70%] text-md sm:text-lg md:text-xl lg:text-2xl font-medium">
               Hi there! I’m a dedicated full-stack developer with a passion for creating innovative web solutions. From interactive games to data-driven platforms, I love turning ideas into reality through code. Always eager to learn and tackle new challenges, I’m committed to crafting impactful digital experiences.
             </p>
-            <Link to="/projects">
+            <Link to="/projects" className="hidden lg:block">
               <Magnetic height="100px" range={70} strength={2} color="#333333" className="-translate-x-1/2 -translate-y-1/2 mt-[10%] rounded-full flex flex-col justify-center items-center">
                 <p>Explore</p>
                 <p>Projects</p>
@@ -74,20 +74,28 @@ export const Home : React.FC<HomeProps> = ({}) => {
             </Link>
           </div>
         </div>
-        <div className="w-[20%] flex flex-col gap-10">
+        <div className="w-full lg:w-[20%] flex flex-col gap-10">
           <p className="font-semibold text-5xl">I Know</p>
-          <div className="text-3xl grid grid-cols-3">
-            {skills.map(({name, ref}) => (
-              <div
-                className="h-20"
-                ref={ref}
-              >
-                <Canvas className="h-0">
-                  <SlimeBall radius={2} distortion={0.4} distortionSpeed={2} color={"white"} displace={false} clientX={window.innerWidth/2} texture={`../../../logos/${name}.png`}/>
-                  <ambientLight intensity={10} color={"white"}/>
-                </Canvas>
-              </div>
-            ))}
+          <div className="w-full flex justify-between">
+            <div className="w-1/2 lg:w-auto text-3xl grid grid-cols-3">
+              {skills.map(({name, ref}) => (
+                <div
+                  className="h-20"
+                  ref={ref}
+                >
+                  <Canvas className="h-0">
+                    <SlimeBall radius={2} distortion={0.4} distortionSpeed={2} color={"white"} displace={false} clientX={window.innerWidth/2} texture={`../../../logos/${name}.png`}/>
+                    <ambientLight intensity={10} color={"white"}/>
+                  </Canvas>
+                </div>
+              ))}
+            </div>
+            <Link to="/projects" className="hidden md:block lg:hidden">
+              <Magnetic height="100px" range={70} strength={2} color="#333333" className="-translate-x-1/2 -translate-y-1/2 mt-[10%] rounded-full flex flex-col justify-center items-center">
+                <p>Explore</p>
+                <p>Projects</p>
+              </Magnetic>
+            </Link>
           </div>
         </div>
       </div>

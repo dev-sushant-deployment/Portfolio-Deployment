@@ -77,17 +77,21 @@ export const Home : React.FC<HomeProps> = ({}) => {
         <div className="w-full lg:w-[20%] flex flex-col gap-10">
           <p className="font-semibold text-5xl">I Know</p>
           <div className="w-full flex justify-between">
-            <div className="w-1/2 lg:w-auto text-3xl grid grid-cols-3">
-              {skills.map(({name, ref}) => (
-                <div
-                  className="h-20"
-                  ref={ref}
-                >
-                  <Canvas className="h-0">
-                    <SlimeBall radius={2} distortion={0.4} distortionSpeed={2} color={"white"} displace={false} clientX={window.innerWidth/2} texture={`../../../logos/${name}.png`}/>
-                    <ambientLight intensity={10} color={"white"}/>
-                  </Canvas>
-                </div>
+            <div className="w-1/2 lg:w-auto text-3xl flex flex-col gap-2 sm:grid grid-cols-3">
+              {skills.map(({name, ref, color}) => (
+                <>
+                  <div
+                    className="h-20 hidden sm:block"
+                    ref={ref}
+                    key={name}
+                  >
+                    <Canvas className="h-0">
+                      <SlimeBall radius={2} distortion={0.4} distortionSpeed={2} color={"white"} displace={false} clientX={window.innerWidth/2} texture={`../../../logos/${name}.png`}/>
+                      <ambientLight intensity={10} color={"white"}/>
+                    </Canvas>
+                  </div>
+                  <p className="sm:hidden ml-[5%] font-semibold uppercase text-[30px] roboto-condensed-200" style={{color}}>{name}</p>
+                </>
               ))}
             </div>
             <Link to="/projects" className="hidden md:block lg:hidden">
@@ -99,16 +103,16 @@ export const Home : React.FC<HomeProps> = ({}) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-[70%]">
-        <p className="text-left w-full font-normal text-7xl">Acheivement</p>
+      <div className="flex flex-col w-[95%] md:w-[80%] xl:w-[70%]">
+        <p className="text-left w-full font-normal text-5xl lg:text-7xl">Acheivement</p>
         <div className="pl-[10%] mt-[10%] flex flex-col gap-10">
-          <p className="text-3xl">
-            First Rank in IIT Mandi Hackathon (FrostHack 2024)
+          <p className="text-xl lg:text-3xl">
+            First Rank in Hackathon (FrostHack 2024, hosted by IIT Mandi)
           </p>
-          <div className="ml-[10%]">
+          <div className="lg:ml-[10%]">
             <p className="text-2xl mb-2">Note-Corner</p>
-            <img src="../../../ProjectCover/notecorner.png" alt="Note-Corner" className="w-[80%] object-cover"/>
-            <div className="flex justify-end mr-[10%]">
+            <img src="../../../ProjectCover/notecorner.png" alt="Note-Corner" className="w-[95%] lg:w-[80%] object-cover"/>
+            <div className="flex justify-end lg:mr-[10%]">
               <Link to="/project/notecorner">
                 <Magnetic height="100px" range={70} strength={2} color="#333333" className="-translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col justify-center items-center">
                   <p>Explore</p>

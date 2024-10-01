@@ -77,11 +77,11 @@ export const Home : React.FC<HomeProps> = ({}) => {
         <div className="w-full lg:w-[20%] flex flex-col gap-10">
           <p className="font-semibold text-5xl">I Know</p>
           <div className="w-full flex justify-between">
-            <div className="w-1/2 lg:w-auto text-3xl flex flex-col gap-2 sm:grid grid-cols-3">
+            <div className="w-1/2 lg:w-auto text-3xl flex flex-col gap-2 md:grid grid-cols-3">
               {skills.map(({name, ref, color}) => (
                 <>
                   <div
-                    className="h-20 hidden sm:block"
+                    className="h-20 hidden md:block"
                     ref={ref}
                     key={name}
                   >
@@ -90,7 +90,7 @@ export const Home : React.FC<HomeProps> = ({}) => {
                       <ambientLight intensity={10} color={"white"}/>
                     </Canvas>
                   </div>
-                  <p className="sm:hidden ml-[5%] font-semibold uppercase text-[30px] roboto-condensed-200" style={{color}}>{name}</p>
+                  <p className="md:hidden ml-[5%] font-semibold uppercase text-[30px] roboto-condensed-200" style={{color}}>{name}</p>
                 </>
               ))}
             </div>

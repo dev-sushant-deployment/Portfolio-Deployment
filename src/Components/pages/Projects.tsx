@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link, useNavigate } from "react-router-dom";
 import { breakPoint } from "../../constants";
+import { Helmet } from "react-helmet";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,6 +136,10 @@ export const Projects: React.FC<ProjectsProps> = () => {
   // },[projectIndex, projects, projectName]);
   return (
     <div className="w-lvw flex justify-center overflow-x-hidden">
+      <Helmet>
+        <title>Sushant Wayal | Projects</title>
+        <meta name="description" content="Projects" />
+      </Helmet>
       <div className="w-3/5  mt-[30%] sm:mt-[12%]">
         <div className="w-full flex flex-col gap-20" ref={scrollDivRef}>
           {projects.map(({filename, ref}, i) => (

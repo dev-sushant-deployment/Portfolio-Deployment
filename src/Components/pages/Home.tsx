@@ -7,6 +7,7 @@ import { mouseInOut } from "../../Helper"
 import { Magnetic } from "../components/Magnetic"
 import { Link } from "react-router-dom"
 import { File, MailIcon } from "lucide-react"
+import { Helmet } from "react-helmet"
 
 interface HomeProps {}
 
@@ -57,6 +58,10 @@ export const Home : React.FC<HomeProps> = ({}) => {
   },[anyInside])
   return (
     <div className="w-lvw flex flex-col items-center text-white relative top-36 sm:top-28 gap-20">
+      <Helmet>
+        <title>Sushant Wayal | Portfolio</title>
+        <meta name="description" content="Sushant Wayal is a dedicated full-stack developer with a passion for creating innovative web solutions. From interactive games to data-driven platforms, he loves turning ideas into reality through code. Always eager to learn and tackle new challenges, he’s committed to crafting impactful digital experiences." />
+      </Helmet>
       <div className="w-[95%] md:w-[80%] xl:w-[70%] flex flex-col gap-20 lg:flex-row">
         <div className="w-full lg:w-[80%] flex flex-col items-start gap-10 md:gap-8">
           <div className="flex flex-col w-full leading-none text-[100px] sm:text-[120px] md:text-[160px] lg:text-[165px] font-bold">

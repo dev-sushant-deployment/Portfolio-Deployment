@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { mouseInOut } from "../../Helper";
 import { useSlimeBall } from "../../Context/slimeBall";
+import { Helmet } from "react-helmet";
 
 interface ContactProps {}
 
@@ -28,6 +29,10 @@ export const Contact : React.FC<ContactProps> = ({}) => {
   },[insideEle])
   return (
     <div className="w-[90%] sm:w-[70%] flex flex-col text-white relative top-28 gap-20 left-1/2 -translate-x-1/2">
+      <Helmet>
+        <title>Sushant Wayal | Contact</title>
+        <meta name="description" content="Contact" />
+      </Helmet>
       <div className="flex flex-col gap-5 sm:gap-20">
         <p className="uppercase font-semibold text-lg">Like what you see?</p>
         <p className="font-bold text-9xl">Let's Talk</p>

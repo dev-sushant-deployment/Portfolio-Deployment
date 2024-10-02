@@ -7,6 +7,7 @@ import { useSlimeBall } from "../../Context/slimeBall";
 import { MyProjects } from "../../Data/projects.json"
 import { MediaNavigator } from "../components/MediaNavigator";
 import { VideoPlayer } from "../components/VideoPlayer";
+import { Helmet } from "react-helmet";
 
 interface ProjectProps {}
 
@@ -44,6 +45,10 @@ export const Project : React.FC<ProjectProps> = ({}) => {
   },[insideEle])
   return (
     <div className="relative pb-[10%] top-[50vh] w-lvw flex flex-col gap-[41px] justify-center items-center">
+      <Helmet>
+        <title>Sushant Wayal | {projectName}</title>
+        <meta name="description" content={description} />
+      </Helmet>
       <p className="w-full left-0 text-6xl text-white font-semibold text-center">
         {projectName}
       </p>

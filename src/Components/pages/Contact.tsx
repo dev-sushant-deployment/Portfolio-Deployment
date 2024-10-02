@@ -27,15 +27,17 @@ export const Contact : React.FC<ContactProps> = ({}) => {
     else setScale(1);
   },[insideEle])
   return (
-    <div className="w-[70%] flex flex-col text-white relative top-28 gap-20 left-1/2 -translate-x-1/2">
-      <p className="uppercase font-semibold text-lg">Like what you see?</p>
-      <p className="font-bold text-9xl">Let's Talk</p>
-      <div className="flex justify-between">
-        <Link to={`mailto:sushantssr12345@gmail.com?subject=Let's Collaborate!!`} className="py-4 px-6 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111] text-white w-[28%]" ref={mailLinkRef}>
+    <div className="w-[90%] sm:w-[70%] flex flex-col text-white relative top-28 gap-20 left-1/2 -translate-x-1/2">
+      <div className="flex flex-col gap-5 sm:gap-20">
+        <p className="uppercase font-semibold text-lg">Like what you see?</p>
+        <p className="font-bold text-9xl">Let's Talk</p>
+      </div>
+      <div className="flex justify-start gap-5 sm:justify-between flex-col sm:flex-row items-start">
+        <Link to={`mailto:sushantssr12345@gmail.com?subject=Let's Collaborate!!`} className="py-4 px-6 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111] text-white" ref={mailLinkRef}>
           <p className="uppercase">sushantssr12345@gmail.com</p>
           <ArrowRight size={24} />
         </Link>
-        <div className="flex gap-2">
+        <div className="flex gap-2 h-[50px]">
           <Link to="https://www.linkedin.com/in/sushant-wayal-721964266/" className="border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111] text-white px-3" ref={linkedinLinkRef}>
             <Linkedin size={24} color="white"/>
           </Link>

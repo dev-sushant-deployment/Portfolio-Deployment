@@ -53,7 +53,7 @@ export const Project : React.FC<ProjectProps> = ({}) => {
           {description}
         </p>
       </div>
-      <div className="w-[72vw] flex justify-between text-white">
+      <div className="h-[100px] sm:h-auto w-[72vw] flex flex-col sm:flex-row justify-between items-center text-white">
         <Link to={github} className="py-2 px-2 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111]" ref={githubLinkRef}>
           <p>Visit Github</p>
           <Github size={18} />
@@ -66,7 +66,7 @@ export const Project : React.FC<ProjectProps> = ({}) => {
         </Link>
       </div>
       <hr className="w-[72vw] border-[0.5px] border-white" />
-      <div className="w-[72vw] flex justify-between text-white uppercase">
+      <div className="w-[72vw] flex flex-col sm:flex-row justify-start gap-8 sm:justify-between text-white uppercase">
         <div className="flex flex-col items-start gap-5">
           <p>Year :</p>
           <div>
@@ -84,7 +84,7 @@ export const Project : React.FC<ProjectProps> = ({}) => {
       </div>
       <div className="flex flex-col gap-4">
         <p className="uppercase text-white text-center font-semibold text-lg"> Demo Video </p>
-        <video src={`../../../ProjectCover/${filename}`} className="w-[72vw] h-[84vh] object-cover border-2 border-white rounded-2xl" autoPlay loop muted />
+        <video src={`../../../ProjectCover/${filename}`} className="w-[90vw] sm:w-[72vw] aspect-video object-cover border-2 border-white rounded-2xl" autoPlay loop muted />
       </div>
       <div className="flex flex-col gap-0">
         <p className="uppercase text-white text-center font-semibold text-lg"> Screen-shots </p>
@@ -96,7 +96,7 @@ export const Project : React.FC<ProjectProps> = ({}) => {
         <ArrowRight size={24} />
       </Link>
       <hr className="w-[72vw] border-[0.5px] border-white" />
-      <div className="w-[72vw] flex justify-between text-white">
+      <div className="w-[90vw] sm:w-[72vw] flex justify-between text-white">
         <Link to={projectIndex === 0 ? "/projects" : `/project/${MyProjects[projectIndex-1].link}`} className="py-2 px-2 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111]" ref={backLinkRef}>
           <ArrowLeft size={24} />
           <p> {projectIndex === 0 ? "Back to Projects" : "Previous Project"} </p>
@@ -105,7 +105,7 @@ export const Project : React.FC<ProjectProps> = ({}) => {
           projectIndex === MyProjects.length-1 ?
           null :
           <Link to={`/project/${MyProjects[projectIndex+1].link}`} className="py-2 px-2 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111]" ref={nextLinkRef}>
-          <p> {"Next Project"} </p>
+          <p> Next Project </p>
           <ArrowRight size={24} />
         </Link>}
       </div>

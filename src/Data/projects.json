@@ -2,7 +2,7 @@
   "MyProjects" : [
     {
       "name": "Idea-Connect",
-      "filename": "ideaconnect.jpg",
+      "filename": "ideaconnect.webp",
       "link": "ideaconnect",
       "description": "Created a Website for sharing and developing ideas, making user idea collaboration 50% easier. Implemented Authentication and Authorization features to ensure secure access to the platform. Publishing Idea, with Progress tracking, and features to show Interest and Include others in the idea, makes idea management and user collaborations easier by 30%. Implemented Real-time Toast Notification and Form Validation, improving user experience. Integrated Real-time communication features including group chatting, peer-to-peer video calls, Voice Messages and Media sharing, enhancing users interaction for idea growth.",
       "github": "https://github.com/sushant-wayal/IdeaConnect",
@@ -12,7 +12,7 @@
     },
     {
       "name": "EnviScribe",
-      "filename": "enviscribe.jpg",
+      "filename": "enviscribe.webp",
       "link": "enviscribe",
       "description": "Created a Website for collecting and disseminating environmental data from remote locations. Designed and integrated dynamic graphs for intuitive data visualisation, enhancing user experience by 20%. Ensured efficient data management for reliable storage and retrieval, reducing errors in data by 25%.",
       "github": "https://github.com/sushant-wayal/EnviScribe",
@@ -23,7 +23,7 @@
     },
     {
       "name": "Note-Corner",
-      "filename": "notecorner.jpg",
+      "filename": "notecorner.webp",
       "demoVideo": "notecorner.mp4",
       "link": "notecorner",
       "description": "Contributed in making Note-Corner, and utilised technologies like, NextJs, Prisma and PostgreSQL, component libraries like Shadcn, and Acternity UI, improving user work management by 25%.",
@@ -34,7 +34,7 @@
     },
     {
       "name": "Tic-Tac-Toe",
-      "filename": "tictactoe.jpg",
+      "filename": "tictactoe.webp",
       "link": "tictactoe",
       "description": "Developed a real-time multiplayer tic-tac-toe game using Socket.IO, HTML, CSS, and JavaScript. Implemented a system to randomly connect users for game play, making a unique user experience.",
       "github": "https://github.com/sushant-wayal/Multiplayer-TicTacToe-RealTime",

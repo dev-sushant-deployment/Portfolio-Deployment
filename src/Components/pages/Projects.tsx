@@ -21,10 +21,10 @@ export const Projects: React.FC<ProjectsProps> = () => {
   // const [disabled, setDisabled] = useState(false);
   const disabled = false;
   const projects = [
-    {name: "Idea-Connect", filename: "ideaconnect.jpg", link: "ideaconnect", ref: useRef<HTMLDivElement>(null)},
-    {name: "EnviScribe", filename: "enviscribe.jpg", link: "enviscribe", ref: useRef<HTMLDivElement>(null)},
-    {name: "Note-Corner", filename: "notecorner.jpg", link: "notecorner", ref: useRef<HTMLDivElement>(null)},
-    {name: "Tic-Tac-Toe", filename: "tictactoe.jpg", link: "tictactoe", ref: useRef<HTMLDivElement>(null)},
+    {name: "Idea-Connect", filename: "ideaconnect.webp", link: "ideaconnect", ref: useRef<HTMLImageElement>(null)},
+    {name: "EnviScribe", filename: "enviscribe.webp", link: "enviscribe", ref: useRef<HTMLImageElement>(null)},
+    {name: "Note-Corner", filename: "notecorner.webp", link: "notecorner", ref: useRef<HTMLImageElement>(null)},
+    {name: "Tic-Tac-Toe", filename: "tictactoe.webp", link: "tictactoe", ref: useRef<HTMLImageElement>(null)},
   ];
   const handleScroll = () => {
     if (window.innerWidth < breakPoint) return;
@@ -146,8 +146,9 @@ export const Projects: React.FC<ProjectsProps> = () => {
         <div className="w-full flex flex-col gap-20" ref={scrollDivRef}>
           {projects.map(({filename, ref}, i) => (
             <Magnetic key={i} color="" range={250} height="70vh" width="60vw" strength={0.2} scale={1} className="flex justify-center items-center" disabled={disabled}>
-              <div style={{backgroundImage: `url(../../../ProjectCover/${filename})`}} className="w-full h-full bg-cover bg-center flex justify-center items-center bg-black" ref={ref}>
-              </div>
+              {/* <div style={{backgroundImage: `url(../../../ProjectCover/${filename})`}} className="w-full h-full bg-cover bg-center flex justify-center items-center bg-black" ref={ref}> */}
+              <img src={`../../../ProjectCover/${filename}`} alt={filename} className="w-full h-full object-cover" ref={ref} />
+              {/* </div> */}
             </Magnetic>
           ))}
         </div>

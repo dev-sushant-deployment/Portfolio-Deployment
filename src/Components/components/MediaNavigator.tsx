@@ -43,7 +43,7 @@ export const MediaNavigator: React.FC<MediaNavigatorProps> = ({projectName, numb
     <div className="w-[90vw] sm:w-[72vw] aspect-video relative flex flex-col gap-5 items-center">
       <div className="w-full h-full overflow-x-scroll overflow-y-hidden flex" ref={navigatorRef}>
         {[...Array(numberOfMedia)].map((_, index) => (
-          <img src={`../../../ScreenShots/${projectName}/SS${index+1}.png`} alt={`${projectName}_SS_${index+1}`} key={index} className="w-full h-full object-contain flex-shrink-0" />
+          <img src={`../../../ScreenShots/${projectName}/SS${index+1}.webp`} alt={`${projectName}_SS_${index+1}`} key={index} className="w-full h-full object-contain flex-shrink-0" />
         ))}
       </div>
       <div className="hidden md:block">

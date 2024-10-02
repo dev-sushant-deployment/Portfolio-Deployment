@@ -102,7 +102,7 @@ export const Home : React.FC<HomeProps> = ({}) => {
                     key={name}
                   >
                     <Canvas className="h-0">
-                      <SlimeBall radius={2} distortion={0.4} distortionSpeed={2} color={"white"} displace={false} clientX={window.innerWidth/2} texture={`../../../logos/${name}.png`}/>
+                      <SlimeBall radius={2} distortion={0.4} distortionSpeed={2} color={"white"} displace={false} clientX={window.innerWidth/2} texture={`../../../logos/${name}.webp`}/>
                       <ambientLight intensity={10} color={"white"}/>
                     </Canvas>
                   </div>

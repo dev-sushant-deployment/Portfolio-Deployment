@@ -3,6 +3,7 @@ import { Magnetic } from "../components/Magnetic";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link, useNavigate } from "react-router-dom";
+import { breakPoint } from "../../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,6 @@ interface ProjectsProps {}
 
 export const Projects: React.FC<ProjectsProps> = () => {
   const [rotation, setRotation] = useState<number>(-8);
-  const breakPoint = 768;
   // const baseWidth = 1536;
   // const navigate = useNavigate();
   const scrollDivRef = useRef<HTMLDivElement>(null);

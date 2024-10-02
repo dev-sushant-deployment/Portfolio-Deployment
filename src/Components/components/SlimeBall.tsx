@@ -4,6 +4,7 @@ import * as THREE from "three";
 import gsap from "gsap";
 import { useLoader } from "@react-three/fiber";
 import { useSlimeBall } from "../../Context/slimeBall";
+import { breakPoint } from "../../constants";
 
 interface SlimeBallProps {
   radius: number;
@@ -40,7 +41,7 @@ export const SlimeBall : React.FC<SlimeBallProps> = ({ radius, distortion, disto
   }, [clientX, ballRef.current, ballMaterialRef.current]);
   const { scale } = useSlimeBall();
   useEffect(() => {
-    if (ballRef.current && animateScale) {
+    if (ballRef.current && animateScale && window.innerWidth >= breakPoint) {
       gsap.to(ballRef.current.position, {
         z: (scale-1)*(scaleFactor || 5),
         duration: 1,

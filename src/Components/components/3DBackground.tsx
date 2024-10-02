@@ -4,6 +4,7 @@ import * as THREE from "three";
 import gsap from "gsap";
 import { SlimeBall } from "./SlimeBall";
 import { useSlimeBall } from "../../Context/slimeBall";
+import { breakPoint } from "../../constants";
 
 interface I3DBackgroundProps {
   clientX: number;
@@ -25,7 +26,7 @@ export const ThreeDBackground: React.FC<I3DBackgroundProps> = ({ clientX }) => {
   }, [torousRef.current]);
   const { scale } = useSlimeBall();
   useEffect(() => {
-    if (torousRef.current) {
+    if (torousRef.current && window.innerWidth >= breakPoint) {
       gsap.to(torousRef.current.scale, {
         x: scale*2,
         y: scale*2,

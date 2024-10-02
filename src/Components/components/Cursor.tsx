@@ -23,7 +23,7 @@ export const Cursor: React.FC<CursorProps> = ({ clientX, clientY }) => {
     }
   }, [clientX, clientY, cursorRef]);
   return (
-    <div className={`hidden md:block rounded-full fixed z-[9999] mix-blend-difference pointer-events-none -translate-x-1/2 -translate-y-1/2`} ref={cursorRef}>
+    <div className={`hidden lg:block rounded-full fixed z-[9999] mix-blend-difference pointer-events-none -translate-x-1/2 -translate-y-1/2`} ref={cursorRef}>
       <Canvas onClick={(e) => {
         e.preventDefault();
         const elements = document.elementsFromPoint(clientX, clientY);

@@ -46,7 +46,7 @@ export const Contact : React.FC<ContactProps> = ({}) => {
           </Link>
         </div>
       </div>
-      <div>
+      <div className="mb-[15%] sm:mb-0">
         <p className="text-2xl">I'm always looking for new opportunities and collaborations.</p>
         <p className="text-2xl">Feel free to reach out to me.</p>
       </div>

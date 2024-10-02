@@ -10,7 +10,6 @@ export const MediaNavigator: React.FC<MediaNavigatorProps> = ({projectName, numb
   const navigatorRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const moveToLeft = () => {
-    console.log("go left ; index", index);
     navigatorRef.current?.scrollTo({
       left: navigatorRef.current?.clientWidth*(index-1),
       behavior: "smooth"
@@ -18,7 +17,6 @@ export const MediaNavigator: React.FC<MediaNavigatorProps> = ({projectName, numb
     setIndex(index-1);
   }
   const moveToRight = () => {
-    console.log("go right ; index", index);
     navigatorRef.current?.scrollTo({
       left: navigatorRef.current?.clientWidth*(index+1),
       behavior: "smooth"

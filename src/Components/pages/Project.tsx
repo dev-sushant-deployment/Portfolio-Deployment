@@ -15,7 +15,7 @@ export const Project : React.FC<ProjectProps> = ({}) => {
   const project = MyProjects.find(project => project.link === name);
   const projectIndex = MyProjects.findIndex(project => project.link === name);
   if (!project) return null;
-  const { name : projectName, description, github, website, filename, year, technologies, link, noOfSS } = project;
+  const { name : projectName, description, github, website, filename, demoVideo, year, technologies, link, noOfSS } = project;
   const { setScale }  = useSlimeBall()
   useEffect(() => {
     window.scrollTo(0,0);
@@ -60,7 +60,7 @@ export const Project : React.FC<ProjectProps> = ({}) => {
           <Github size={18} />
           <ArrowRight size={24} />
         </Link>
-        {website.length > 0 && <Link to={website} className="py-2 px-2 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111]" ref={websiteLinkRef}>
+        {website && <Link to={website} className="py-2 px-2 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111]" ref={websiteLinkRef}>
           <p>Visit Website</p>
           <Globe size={18} />
           <ArrowRight size={24} />
@@ -83,15 +83,15 @@ export const Project : React.FC<ProjectProps> = ({}) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4">
+      {demoVideo && <div className="flex flex-col gap-4">
         <p className="uppercase text-white text-center font-semibold text-lg"> Demo Video </p>
-        <VideoPlayer src={`../../../DemoVideos/${link}.mp4`} className="w-[90vw] sm:w-[72vw] aspect-video object-cover border-2 border-white rounded-2xl" videoClassName="w-full h-full aspect-video object-cover rounded-2xl"/>
-      </div>
+        <VideoPlayer src={`../../../DemoVideos/${demoVideo}`} className="w-[90vw] sm:w-[72vw] aspect-video object-cover border-2 border-white rounded-2xl" videoClassName="w-full h-full aspect-video object-cover rounded-2xl"/>
+      </div>}
       <div className="flex flex-col gap-0">
         <p className="uppercase text-white text-center font-semibold text-lg"> Screen-shots </p>
         <MediaNavigator projectName={link} numberOfMedia={noOfSS} />
       </div>
-      {website.length > 0 && <Link to={website} className="py-2 px-2 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111] text-white" ref={lastWebsiteLinkRef}>
+      {website && <Link to={website} className="py-2 px-2 border-white border-[1px] rounded-full flex items-center gap-2 bg-[#111111] text-white" ref={lastWebsiteLinkRef}>
         <p>Visit Website</p>
         <Globe size={18} />
         <ArrowRight size={24} />

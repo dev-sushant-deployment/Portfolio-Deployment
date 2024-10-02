@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Magnetic } from "../components/Magnetic";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { breakPoint } from "../../constants";
 import { Helmet } from "react-helmet";
 
@@ -17,7 +18,8 @@ export const Projects: React.FC<ProjectsProps> = () => {
   const scrollDivRef = useRef<HTMLDivElement>(null);
   const projectNameRef = useRef<HTMLDivElement>(null);
   const [projectIndex, setProjectIndex] = useState(0);
-  const [disabled, setDisabled] = useState(false);
+  // const [disabled, setDisabled] = useState(false);
+  const disabled = false;
   const projects = [
     {name: "Idea-Connect", filename: "ideaconnect.jpg", link: "ideaconnect", ref: useRef<HTMLDivElement>(null)},
     {name: "EnviScribe", filename: "enviscribe.jpg", link: "enviscribe", ref: useRef<HTMLDivElement>(null)},

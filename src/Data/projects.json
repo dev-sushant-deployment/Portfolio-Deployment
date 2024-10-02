@@ -34,7 +34,7 @@
       "noOfSS": 5
     },
     {
-      "name": "Multiplayer Tic-Tac-Toe",
+      "name": "Tic-Tac-Toe",
       "filename": "tictactoe.jpg",
       "link": "tictactoe",
       "description": "Developed a real-time multiplayer tic-tac-toe game using Socket.IO, HTML, CSS, and JavaScript. Implemented a system to randomly connect users for game play, making a unique user experience.",

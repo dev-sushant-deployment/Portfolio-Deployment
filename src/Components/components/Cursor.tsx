@@ -34,7 +34,7 @@ export const Cursor: React.FC<CursorProps> = ({ clientX, clientY }) => {
               if (href.startsWith("/")) navigate(href);
               else window.open(href, "_blank");
             }
-          } else if (element.id === "navigateLeft" || element.id === "navigateRight") element.dispatchEvent(new Event("click"));
+          } else if (element.id === "navigateLeft" || element.id === "navigateRight" || element.id == "mute-unmute") element.dispatchEvent(new Event("click"));
         });
       }}>
         <SlimeBall radius={0.5} distortion={0.9} distortionSpeed={2} color={"white"} clientX={clientX} displace={false} animateScale scaleFactor={12}/>
